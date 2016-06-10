@@ -6,7 +6,7 @@
 
 import sys
 import os
-from numpy import *
+import numpy as np
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -22,7 +22,7 @@ def data2matrix(path, delimiter):
                 recordList = recordList + [map(eval, row.split(delimiter)) ]
             except Exception as e:
                 print('Error:', e)
-    return mat(recordList)
+    return np.array(recordList)
 
 # to test: 
 # recordMat = data2matrix('testtxt.txt', '\t')
